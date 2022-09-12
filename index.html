@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Company logo</h1>
+    <form id="form">
+        <label for="url">
+            Enter your URL
+            <input type="text" id="url" placeholder="Ex: http://creativo.com.uy/" required />
+        </label>
+        <label for="img-size">
+            Enter the size of the QR image
+            <select name="img-size" id="img-size">
+                <option value="200" selected>200x200</option>
+                <option value="300">300x300</option>
+                <option value="400">400x400</option>
+                <option value="500">500x500</option>
+                <option value="600">600x600</option>
+                <option value="700">700x700</option>
+                <option value="800">800x800</option>
+              </select>
+        </label>
+        <button type="submit" id="generateBtn">Generate QR</button>
+    </form>
+    <div id="container-dynamic-elements">
+        <div id="loader" class="loader">Generating your QR...</div>
+        <div id="qrcode"></div>
+    </div>
+
+    <!-- qrcodejs CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
