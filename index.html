@@ -4,33 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>QR generator | Company name</title>
+    <!-- Font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Company logo</h1>
-    <form id="form">
-        <label for="url">
-            Enter your URL
-            <input type="text" id="url" placeholder="Ex: http://creativo.com.uy/" required />
-        </label>
-        <label for="img-size">
-            Enter the size of the QR image
-            <select name="img-size" id="img-size">
-                <option value="200" selected>200x200</option>
-                <option value="300">300x300</option>
-                <option value="400">400x400</option>
-                <option value="500">500x500</option>
-                <option value="600">600x600</option>
-                <option value="700">700x700</option>
-                <option value="800">800x800</option>
-              </select>
-        </label>
-        <button type="submit" id="generateBtn">Generate QR</button>
-    </form>
-    <div id="container-dynamic-elements">
-        <div id="loader" class="loader">Generating your QR...</div>
-        <div id="qrcode"></div>
+    <div id="main-wrapper">
+        <header>
+            <div class="content-wrapper">
+                <div class="company-logo">
+                    <a href="https://fierrofertil.com.uy/" target="_blank">
+                        <img src="assets/fierrofertil.png" alt="Company logo" />
+                    </a>
+                </div>
+                <div class="creativo-logo">
+                    <h1>QR Generator</h1>
+                    <span>powered by</span>
+                    <a href="http://creativo.com.uy/" target="_blank">
+                        <img src="assets/creativo-dark-bg.png" alt="Creativo Multimedia logo" />
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="content-wrapper">
+                <div class="content-form">
+                    <h2>Create your QR code quick and easy</h2>
+                    <p>
+                        With a simple scan you can increase customer engagement promoting your products.
+                        Just paste the url to your product, pdf, video or image. Select the size of QR code. Click on "Generate QR" button and then download the QR code image. 
+                    </p>
+                    <form id="form">
+                        <label for="url">
+                            Enter your URL
+                            <input type="text" id="url" placeholder="Ex: https://www.creativo.com.uy/" required />
+                        </label>
+                        <label for="img-size">
+                            Enter the size of the QR (pixels)
+                            <div class="select-wrapper">
+                                <select name="img-size" id="img-size">
+                                    <option value="200" selected>200 x 200</option>
+                                    <option value="300">300 x 300</option>
+                                    <option value="400">400 x 400</option>
+                                    <option value="500">500 x 500</option>
+                                    <option value="600">600 x 600</option>
+                                    <option value="700">700 x 700</option>
+                                    <option value="800">800 x 800</option>
+                                </select>
+                            </div>
+                        </label>
+                        <button type="submit" id="generateBtn" class="btn btn-secondary">Generate QR <i class="fa-sharp fa-solid fa-qrcode"></i></button>
+                    </form>
+                </div>
+                <div id="container-dynamic-elements" class="content-image">
+                    <div id="loader" class="loader">
+                        <img src="assets/loader.svg" alt="Loading..." class="loader-img">
+                        <p>Generating your QR...</p>
+                    </div>
+                    <div id="qrcode">
+                        <img src="assets/hero-image.png" alt="Background image" class="home-img" />
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="content-wrapper">
+                <small>&#169; Copyright <span id="current-year"></span></small>
+                <small><span id="current-date"></span></small>
+            </div>
+        </footer>
     </div>
 
     <!-- qrcodejs CDN -->

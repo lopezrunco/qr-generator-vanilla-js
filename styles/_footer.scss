@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+footer {
+    // border-top: 1px solid $border-color;
+    background-color: $secondary-color;
+    color: $white-text;
+    padding: 2rem 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

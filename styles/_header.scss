@@ -1,0 +1,58 @@
+@import './variables.scss';
+
+header {
+    padding: 1rem;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    background-color: $primary-color;
+    color: $white-text;
+    font-family: $secondary-font;
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .company-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .creativo-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            h1 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-weight: 100;
+                font-size: .8rem;
+                text-transform: lowercase;
+            }
+        }
+
+        .company-logo img,
+        .creativo-logo img {
+            max-height: 45px;
+        }
+    }
+}
+
+@media screen and (max-width: 769px) {
+    header {
+        .content-wrapper {
+            justify-content: center;
+
+            .creativo-logo {
+                display: none;
+            }
+        }
+    }
+}

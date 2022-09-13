@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+.btn {
+    padding: 1rem 2rem;
+    color: $white-text;
+    border: none;
+    border-radius: 4px;
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: $main-transition;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+
+.btn-primary {
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: darken($color: $primary-color, $amount: 10);
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary-color;
+
+    &:hover {
+        background-color: darken($color: $secondary-color, $amount: 10);
+    }
+}
+
+.btn-success {
+    margin-top: -1rem;
+    background-color: $success-color;
+
+    &:hover {
+        background-color: darken($color: $success-color, $amount: 10);
+    }
+}

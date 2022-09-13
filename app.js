@@ -3,7 +3,9 @@ const d = document,
     $qr = d.getElementById('qrcode'),
     $loader = d.getElementById('loader'),
     $generateBtn = d.getElementById('generateBtn'),
-    $containerDynamicElements = d.getElementById('container-dynamic-elements')
+    $containerDynamicElements = d.getElementById('container-dynamic-elements'),
+    $currentYear = d.getElementById('current-year'),
+    $currentDate = d.getElementById('current-date')
 
 const handleSubmit = e => {
     e.preventDefault()
@@ -13,18 +15,21 @@ const handleSubmit = e => {
     if (url === '' || size === null) return
 
     try {
+        $loader.style.display = 'flex'
         $generateBtn.disabled = true
-        $loader.style.display = 'block'
-        generateQR(url, size)
+        $generateBtn.innerText = 'Wait, please...'
         setTimeout(() => {
-            const saveUrl = $qr.querySelector('img').src
-            createSaveBtn(saveUrl)
-        }, 50);
+            generateQR(url, size)
+            $loader.style.display = 'none'
+            $generateBtn.disabled = false
+            $generateBtn.innerHTML = 'Generate QR <i class="fa-sharp fa-solid fa-qrcode"></i>'
+            setTimeout(() => {
+                const saveUrl = $qr.querySelector('img').src
+                createSaveBtn(saveUrl)
+            }, 50)
+        }, 1000)
     } catch (error) {
         console.error(error)
-    } finally {
-        $loader.style.display = 'none'
-        $generateBtn.disabled = false
     }
 }
 
@@ -39,20 +44,26 @@ const generateQR = (url, size) => {
         text: url,
         width: size,
         height: size,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     })
 }
 
 const createSaveBtn = saveUrl => {
     const downloadBtn = d.createElement('a')
+    const downloadIcon = d.createElement('i')
+    downloadIcon.classList = 'fa-solid fa-download'
     downloadBtn.id = 'download-btn'
-    downloadBtn.classList = 'download-btn'
+    downloadBtn.classList = 'btn btn-success'
     downloadBtn.href = saveUrl
     downloadBtn.download = 'qrcode'
     downloadBtn.innerHTML = 'Save image'
+    downloadBtn.appendChild(downloadIcon)
     $containerDynamicElements.appendChild(downloadBtn)
 }
+
+$currentYear.innerText = new Date().getFullYear()
+$currentDate.innerText = new Date().toDateString()
 
 $form.addEventListener('submit', handleSubmit)
