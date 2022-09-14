@@ -25,7 +25,6 @@ main .content-wrapper {
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 1rem;
             width: 100%;
             padding-top: 2rem;
 
@@ -34,10 +33,10 @@ main .content-wrapper {
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                gap: .3rem;
                 font-weight: 700;
                 font-size: .9rem;
                 width: 100%;
+                margin-bottom: 1rem;
 
                 input,
                 .select-wrapper,
@@ -46,6 +45,7 @@ main .content-wrapper {
                     padding: 1rem;
                     border: 1px solid $border-color;
                     border-radius: 4px;
+                    margin-top: .3rem;
                 }
 
                 .select-wrapper {
@@ -111,6 +111,10 @@ main .content-wrapper {
                 box-shadow: none;
             }
         }
+
+        .download-msj {
+            margin-top: 1rem;
+        }
     }
 }
 
@@ -136,6 +140,7 @@ main .content-wrapper {
             form {
                 .btn {
                     margin: 0 auto;
+                    margin-bottom: 1rem;
                 }
             }
         }

@@ -3,11 +3,9 @@ const d = document,
     $qr = d.getElementById('qrcode'),
     $loader = d.getElementById('loader'),
     $generateBtn = d.getElementById('generateBtn'),
-    $containerDynamicElements = d.getElementById('container-dynamic-elements'),
-    $currentYear = d.getElementById('current-year'),
-    $currentDate = d.getElementById('current-date')
+    $containerDynamicElements = d.getElementById('container-dynamic-elements')
 
-const handleSubmit = e => {
+export const handleSubmit = e => {
     e.preventDefault()
     clearDOM()
     const url = d.getElementById('url').value,
@@ -51,19 +49,24 @@ const generateQR = (url, size) => {
 }
 
 const createSaveBtn = saveUrl => {
-    const downloadBtn = d.createElement('a')
-    const downloadIcon = d.createElement('i')
-    downloadIcon.classList = 'fa-solid fa-download'
-    downloadBtn.id = 'download-btn'
-    downloadBtn.classList = 'btn btn-success'
-    downloadBtn.href = saveUrl
-    downloadBtn.download = 'qrcode'
-    downloadBtn.innerHTML = 'Save image'
-    downloadBtn.appendChild(downloadIcon)
-    $containerDynamicElements.appendChild(downloadBtn)
+    if (window.innerWidth > 769) {
+        const downloadBtn = d.createElement('a')
+        const downloadIcon = d.createElement('i')
+        downloadIcon.classList = 'fa-solid fa-download'
+        downloadBtn.id = 'download-btn'
+        downloadBtn.classList = 'btn btn-success'
+        downloadBtn.href = saveUrl
+        downloadBtn.download = 'qrcode'
+        downloadBtn.innerHTML = 'Save image'
+        downloadBtn.appendChild(downloadIcon)
+        $containerDynamicElements.appendChild(downloadBtn)
+    } else {
+        const downloadMsj = d.createElement('p')
+        downloadMsj.id = 'download-btn'
+        downloadMsj.classList = 'download-msj'
+        downloadMsj.innerHTML = 'Long press the QR to download'
+        $containerDynamicElements.appendChild(downloadMsj)
+    }
 }
-
-$currentYear.innerText = new Date().getFullYear()
-$currentDate.innerText = new Date().toDateString()
 
 $form.addEventListener('submit', handleSubmit)

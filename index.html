@@ -16,14 +16,14 @@
         <header>
             <div class="content-wrapper">
                 <div class="company-logo">
-                    <a href="https://fierrofertil.com.uy/" target="_blank">
-                        <img src="assets/fierrofertil.png" alt="Company logo" />
+                    <a href="https://creativo.com.uy/" target="_blank">
+                        <img src="assets/company-logo.png" alt="Company logo" />
                     </a>
                 </div>
                 <div class="creativo-logo">
                     <h1>QR Generator</h1>
                     <span>powered by</span>
-                    <a href="http://creativo.com.uy/" target="_blank">
+                    <a href="https://creativo.com.uy/" target="_blank">
                         <img src="assets/creativo-dark-bg.png" alt="Creativo Multimedia logo" />
                     </a>
                 </div>
@@ -40,7 +40,7 @@
                     <form id="form">
                         <label for="url">
                             Enter your URL
-                            <input type="text" id="url" placeholder="Ex: https://www.creativo.com.uy/" required />
+                            <input type="url" id="url" placeholder="Ex: https://www.creativo.com.uy/" required />
                         </label>
                         <label for="img-size">
                             Enter the size of the QR (pixels)
@@ -56,7 +56,9 @@
                                 </select>
                             </div>
                         </label>
-                        <button type="submit" id="generateBtn" class="btn btn-secondary">Generate QR <i class="fa-sharp fa-solid fa-qrcode"></i></button>
+                        <button type="submit" id="generateBtn" class="btn btn-secondary">
+                            Generate QR <i class="fa-sharp fa-solid fa-qrcode"></i>
+                        </button>
                     </form>
                 </div>
                 <div id="container-dynamic-elements" class="content-image">
@@ -65,7 +67,7 @@
                         <p>Generating your QR...</p>
                     </div>
                     <div id="qrcode">
-                        <img src="assets/hero-image.png" alt="Background image" class="home-img" />
+                        <img src="assets/home-img.png" alt="Background image" class="home-img" />
                     </div>
                 </div>
             </div>
@@ -81,6 +83,7 @@
     <!-- qrcodejs CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Custom JS -->
-    <script src="app.js"></script>
+    <script src="./js/index.js" type="module"></script>
+    <script src="./js/no-modules.js" nomodule></script> <!-- IE support -->
 </body>
 </html>
