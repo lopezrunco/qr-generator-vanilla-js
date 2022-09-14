@@ -47,8 +47,8 @@ Just paste the url to a web, product, pdf, video or image. Select the size of QR
    git clone https://github.com/lopezrunco/qr-generator-vanilla-js.git
    ```
 2. Compile SASS into CSS
-```sh
-    sass --watch styles/main.scss css/main.css
-```
+  ```sh
+      sass --watch styles/main.scss css/main.css
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
