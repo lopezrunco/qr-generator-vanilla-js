@@ -5,6 +5,7 @@
 <div align="center">
 
 <h3 align="center">QR generator</h3>
+    <p>Originally developed for FierroFertil Uruguay, this app can easily generate QR codes for any URL – web pages, products, PDFs, videos, or images.</p>
     Developed by <a href='https://creativo.com.uy/' target='_blank'>Creativo Multimedia</a>
   <p align="center">
     <a href="https://creativo.com.uy/qr/" target="_blank">View Demo</a>
